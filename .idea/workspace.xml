@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c62678b-940e-49b1-9c44-a4819dc8062a" name="變更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/GNN-PyG.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataGenerator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NetTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NetTrain.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrintLog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SCA.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TransmitModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matlab codes/SCA.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FileConvert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matlab codes/SCA.m" beforeDir="false" afterPath="$PROJECT_DIR$/matlab codes/SCA.m" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,21 +41,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.DataGenerator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.NetTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.NetTrain.executor&quot;: &quot;Run&quot;,
-    &quot;Python.PrintLog.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TransmitModel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.models.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Ding Lab/THz-NOMA-Net/CNN&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.DataGenerator.executor": "Run",
+    "Python.FileConvert.executor": "Run",
+    "Python.NetTest.executor": "Run",
+    "Python.NetTrain.executor": "Run",
+    "Python.PrintLog.executor": "Run",
+    "Python.TransmitModel.executor": "Run",
+    "Python.models.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Ding Lab/THz-NOMA-Net/CNN"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Ding Lab\THz-NOMA-Net\GNN-PyG" />

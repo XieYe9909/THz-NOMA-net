@@ -60,6 +60,6 @@ def generate_data(cm: ChannelModel, data_num: int, data_type='train'):
 
 
 if __name__ == '__main__':
-    channel_model = ChannelModel(N=64, K=20, M=25, NQ=64, RP=20, RS=20)
+    channel_model = ChannelModel(N=64, K=10, M=10, NQ=64, RP=20, RS=20)
     # generate_data(channel_model, data_num=5000, data_type='train')
     generate_data(channel_model, data_num=1000, data_type='test')

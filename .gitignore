@@ -158,6 +158,8 @@ saved nets/
 test logs/
 train logs/*.npy
 train logs/*.zip
+matlab codes/data/
+matlab codes/*.asv
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
