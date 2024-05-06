@@ -58,7 +58,7 @@ class GATNet(nn.Module):
         self.FCLayers.add_module(name='ReLU', module=nn.ReLU())
 
     @property
-    def edge_index(self):
+    def edge_index(self):  # Define the edge connection features of our graph model.
         N = self.N_sec + 2 * self.N_prim
         set_sec = range(self.N_sec)
         set_beam = range(self.N_sec, self.N_sec + self.N_prim)
