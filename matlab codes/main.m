@@ -10,5 +10,5 @@ load("data\gS_list.mat");
 for i = 1: data_num
     gP = gP_list(i, :);
     gS = squeeze(gS_list(i, :, :));
-    [outputArg1, outputArg2] = SCA(gP, gS, 1e-12, 1, 1, 3);
+    pS = SCA(gP, gS, 1e-12, 1, 1, 3, 15);
 end

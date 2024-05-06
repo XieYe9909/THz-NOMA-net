@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as func
 import numpy as np
 from torch import Tensor, square, dot, log2, sum, min, relu, mul, div
 from torch.optim import Adam
@@ -28,14 +29,18 @@ class GATNet(nn.Module):
         self.GATLayers.add_module(name='GAT0', module=GATConv(
             in_channels=2 * N_antenna,
             out_channels=out_features_seq[0],
-            heads=heads_seq[0]
+            heads=heads_seq[0],
+            dropout=0.2
         ))
         for i in range(len(out_features_seq) - 1):
+            # self.GATLayers.add_module('ReLU{}'.format(i), nn.ReLU())
             self.GATLayers.add_module('GAT{}'.format(i + 1), GATConv(
                 in_channels=out_features_seq[i] * heads_seq[i],
                 out_channels=out_features_seq[i + 1],
-                heads=heads_seq[i + 1]
+                heads=heads_seq[i + 1],
+                dropout=0.2
             ))
+        # self.GATLayers.add_module(name='ReLU', module=nn.ReLU())
 
         self.FCLayers = nn.Sequential()
         self.FCLayers.add_module(name='FC0', module=nn.Linear(
@@ -44,10 +49,12 @@ class GATNet(nn.Module):
         ))
         for j in range(len(fc_seq) - 1):
             self.FCLayers.add_module('ReLU{}'.format(j), nn.ReLU())
+            self.FCLayers.add_module('Dropout{}'.format(j), nn.Dropout(p=0.2))
             self.FCLayers.add_module('FC{}'.format(j + 1), nn.Linear(
                 in_features=fc_seq[j],
-                out_features=fc_seq[j + 1],
+                out_features=fc_seq[j + 1]
             ))
+        self.FCLayers.add_module(name='Dropout', module=nn.Dropout(p=0.2))
         self.FCLayers.add_module(name='ReLU', module=nn.ReLU())
 
     @property
@@ -79,10 +86,11 @@ class GATNet(nn.Module):
             hi = h[i]
             for layer in self.GATLayers:
                 hi = layer(x=hi, edge_index=edge_index)
+                hi = func.relu(hi)
 
             h_GAT[i] = hi
 
-        p = torch.zeros((h_GAT.shape[0], self.N_sec, self.FCLayers[-2].out_features), dtype=torch.float64)
+        p = torch.zeros((h_GAT.shape[0], self.N_sec, self.FCLayers[-3].out_features), dtype=torch.float64)
         for n in range(self.N_sec):
             p[:, n] = self.FCLayers(h_GAT[:, n])
 
@@ -151,6 +159,7 @@ class GATNet(nn.Module):
             loss_epoch = 0
             for h, gP, gS in train_batch:
                 h[:, :self.N_sec] *= self.norm_ratio
+                h[:, self.N_sec: self.N_sec + self.N_prim] *= 100
                 h[:, -self.N_prim:] *= self.norm_ratio
 
                 gP *= self.norm_ratio
